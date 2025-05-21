@@ -1,22 +1,27 @@
 #include <stdio.h>
 #include <unistd.h>
+#include "insertionsort.h"
 
-int main (int argc, char* argv[]) {
+void printArray(int* array, int size) {
+    printf("ARRAY SIZE: %d\n", size);
+    for (int i = 0; i < size; i++) {
+        printf("INDEX: %d\tVALUE: %d\n", i, array[i]);
+    }
 
+    printf("\n");
+}
+
+
+int main(int argc, char* argv[]) {
+    int input[] = {31, 41, 59, 26, 41, 58};
+    int size = (int) sizeof(input) / sizeof(int);
+
+    printf("Stampo l'array in input\n");
+    printArray(input, size);
+
+    printf("Stampo l'array in input ordinato secondo insertionsort\n");
+    insertionsort(input, size);
+    printArray(input, size);
 
     return 0;
 }
-
-/*  PSEUDOCODICE
-
-    for j ← 2 to length [A]
-        do key ← A[j]
-            > Inserisce A[j] nella sequenza ordinata A[1 .. j-1]
-            i ← j-1
-            while i > 0 and A[i] > key
-                do A[i+1] ← A[i]
-                    i ← i-1
-            A[i+1] ← key
-
-
-*/
