@@ -1,2 +1,0 @@
-# Algoritms and data structures
-https://www.tutorialspoint.com/data_structures_algorithms/insertion_sort_algorithm.htm
