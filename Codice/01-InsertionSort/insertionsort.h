@@ -1,8 +1,11 @@
 #pragma once
+#include <stdio.h>
 
 int insertionsort_d(double A[], int size) {
     double key;
     int i;
+
+    printf("[MISC] Item to sort: %d\n", size);
     for (int j = 1; j < size; j++) { //notice j = 1 and not j = 2 since we're enumerating from 0
         key = A[j];
         i = j-1;
@@ -18,6 +21,8 @@ int insertionsort_d(double A[], int size) {
 int insertionsort_f(float A[], int size) {
     float key;
     int i;
+
+    printf("[MISC] Item to sort: %d\n", size);
     for (int j = 1; j < size; j++) { //notice j = 1 and not j = 2 since we're enumerating from 0
         key = A[j];
         i = j-1;
@@ -32,6 +37,8 @@ int insertionsort_f(float A[], int size) {
 
 int insertionsort_i(int A[], int size) {
     int key, i;
+
+    printf("[MISC] Item to sort: %d\n", size);
     for (int j = 1; j < size; j++) { //notice j = 1 and not j = 2 since we're enumerating from 0
         key = A[j];
         i = j-1;
@@ -43,11 +50,6 @@ int insertionsort_i(int A[], int size) {
     }
     return 0;
 }
-
-#define insertionsort(A, size) _Generic(A, \
-    int*: insertionsort_i, \
-    float*: insertionsort_f, \
-    double*: insertionsort_d)
 
 /*  PSEUDOCODICE
 

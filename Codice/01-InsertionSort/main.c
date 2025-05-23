@@ -15,30 +15,26 @@ int main(int argc, char* argv[]) {
 
     //INT
     printf("Stampo l'array in input\n");
-    printarray(input, size);
+    printarray_i(input, size);
 
     printf("Stampo l'array in input ordinato secondo insertionsort\n");
-    insertionsort(input, size);
-    printarray(input, size);
+    insertionsort_i(input, size);
+    printarray_i(input, size);
 
     printf("Stampo l'array in input ordinato secondo reverse_insertionsort\n");
     if (reverse_insertionsort(input, size) != 0) {
         perror("Error while performing insertionsort");
         exit(EXIT_FAILURE);
     }
-    printarray(input, size);
+    printarray_i(input, size);
 
     //FLOAT
     printf("Stampo l'array in input\n");
-    printarray(input_f, size_f);
+    printarray_f(input_f, size_f);
 
     printf("Stampo l'array in input ordinato secondo insertionsort\n");
-    insertionsort(input_f, size_f);
-    printarray(input_f, size_f);
-
-    printf("Stampo l'array in input ordinato secondo insertionsort\n");
-    insertionsort(input_f, size_f);
-    printarray(input_f, size_f);
+    insertionsort_f(input_f, size_f);
+    printarray_f(input_f, size_f);
 
     return 0;
 }

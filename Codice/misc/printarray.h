@@ -1,11 +1,6 @@
 #pragma once
 #include <stdio.h>
 
-#define printarray(array, size) _Generic(array, \
-    int*: printarray_i, \
-    float*: printarray_f, \
-    double*: printarray_d)
-
 void printarray_d(double array[], int size) {
     printf("ARRAY SIZE: %d\n", size);
     for (int i = 0; i < size; i++) {
