@@ -1,19 +1,24 @@
 #pragma once
+#include <stdio.h>
 #include "merge.h"
+#include "printarray.h"
 
-int mergesort(int A[], int inf, int sup) {
-    int pivot;
+int mergesort(int input[], int inf, int sup) {
     if (inf < sup) {
-        pivot = (inf + sup) / 2; //already floor since is int
+        int pivot = inf + (sup - inf) / 2; //already floor since is int
 
         //Invoke recursively mergesort on left side
-        mergesort(A, inf, pivot);
+        mergesort(input, inf, pivot);
         //Invoke recursively mergesort on right side
-        mergesort(A, pivot + 1, sup);
+        mergesort(input, pivot + 1, sup);
         //Merge the results of the mergesort invocations
-        merge(A, inf, pivot, sup);
+        if (merge(input, inf, pivot, sup) != 0) {
+            printf("Error while attempting to merge with indexes\n\
+                            inf: %d\tsup: %d", inf, sup);
+            return 1; //ERROR
+        }
     }
-
+    
     return 0;
 }
 

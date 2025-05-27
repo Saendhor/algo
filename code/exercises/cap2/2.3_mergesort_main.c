@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 
 #include "../../mycollection/mergesort.h"
@@ -14,7 +13,7 @@ int main(int argc, char* argv[]) {
     printarray_i(input, size);
 
     printf("[MAIN] Printing array after mergesort\n");
-    mergesort(input, 0, size);
+    mergesort(input, 0, size-1);
     printarray_i(input, size);
 
 
