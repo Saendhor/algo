@@ -1,19 +1,19 @@
 #pragma once
 #include <stdio.h>
 
-int selectionsort_i(int A[], int size) {
+#include "swap.h"
+
+int selectionsort_i(int input[], int size) {
     int min_index, temp;
     for (int i = 0; i < size -1; i++) {
         min_index = i;
         for (int j = i+1; j < size; j++) {
-            if (A[min_index] > A[j]) {
+            if (input[min_index] > input[j]) {
                 min_index = j;
             }
         }
         //swap
-        temp = A[i];
-        A[i] = A[min_index];
-        A[min_index] = temp;
+        swap_i(input, i, min_index);
     }
     return 0;
 }
