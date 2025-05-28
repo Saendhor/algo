@@ -1,5 +1,6 @@
 #pragma once
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "swap.h"
 
@@ -11,7 +12,7 @@ typedef struct heap {
 } heap_t;
 
 int fleft(int index) {
-    return 2 * index;
+    return 2 * index + 1;
 }
 
 int fparent(int index) {
@@ -19,16 +20,23 @@ int fparent(int index) {
 }
 
 int fright(int index) {
-    return 2 * index + 1;
+    return 2 * index + 2;
+}
+
+heap_t createheap(int size) {
+    heap_t new_heap;
+    new_heap.size = size;
+    new_heap.heap_size = 0;
+    new_heap.array = (int*) malloc(size * sizeof(int));
+
+    return new_heap;
 }
 
 int max_heapify(heap_t toheapify, int index) {
-    int atindex_max;
+    int atindex_max = index;
     //left < heapsize && left value > index value
     if (fleft(index) <= toheapify.heap_size && toheapify.array[fleft(index)] > toheapify.array[index]) {
         atindex_max = fleft(index);
-    } else { 
-        atindex_max = index;
     }
     //right index < heapsize index && right value > max value (still index value if we entered into the "else")
     if (fright(index) <= toheapify.heap_size && toheapify.array[fright(index)] > toheapify.array[atindex_max]) {
@@ -42,14 +50,12 @@ int max_heapify(heap_t toheapify, int index) {
     return 0;
 }
 
-heap_t build_max_heap_i(int* input) {
-    heap_t new_heap;
-    new_heap.array = input;
-    new_heap.size = new_heap.heap_size = (int) sizeof(input) / sizeof(int);
-    for (int i = new_heap.size / 2; i > 0; i--) {
-        max_heapify(new_heap, i);
+int build_max_heap_i(heap_t input) {
+    //Setup the newly created element
+    for (int i = input.size / 2; i > 0; i--) {
+        max_heapify(input, i);
     }
-    return new_heap;
+    return 0;
 }
 
 /* PSEUDOCODE
