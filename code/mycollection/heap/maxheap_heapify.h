@@ -1,7 +1,7 @@
 #pragma once
 #include "heap_t.h"
 
-int max_heapify(heap_t toheapify, int index) {
+int maxheap_heapify(heap_t toheapify, int index) {
     int atindex_max = index;
     //left < heapsize && left value > index value
     if (fleft(index) <= toheapify.heap_size
@@ -15,7 +15,7 @@ int max_heapify(heap_t toheapify, int index) {
     }
     if (atindex_max != index) {
         swap_i(toheapify.array, index, atindex_max);
-        max_heapify(toheapify, atindex_max);
+        maxheap_heapify(toheapify, atindex_max);
     }
 
     return 0;

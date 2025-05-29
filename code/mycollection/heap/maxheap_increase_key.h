@@ -1,0 +1,5 @@
+/* PSEUDOCODE
+
+    HEAP-INCREASE-KEY(A, i, key)
+
+*/
