@@ -1,36 +1,5 @@
 #pragma once
-#include <stdio.h>
-#include <stdlib.h>
-
-#include "swap.h"
-
-typedef struct heap {
-    int* array;
-    int heap_size;
-    int total_size;
-
-} heap_t;
-
-int fleft(int index) {
-    return 2 * index + 1;
-}
-
-int fparent(int index) {
-    return index / 2;
-}
-
-int fright(int index) {
-    return 2 * index + 2;
-}
-
-heap_t createheap(int size) {
-    heap_t new_heap;
-    new_heap.total_size = size;
-    new_heap.heap_size = 0;
-    new_heap.array = (int*) malloc(size * sizeof(int));
-
-    return new_heap;
-}
+#include "heap_t.h"
 
 int max_heapify(heap_t toheapify, int index) {
     int atindex_max = index;
@@ -49,15 +18,6 @@ int max_heapify(heap_t toheapify, int index) {
         max_heapify(toheapify, atindex_max);
     }
 
-    return 0;
-}
-
-int build_max_heap_i(heap_t input) {
-    //Setup the newly created element
-    for (int i = (input.heap_size - 1) / 2; i >= 0; i--) {
-        printf("[GUARDA] i = %d\n", i);
-        max_heapify(input, i);
-    }
     return 0;
 }
 

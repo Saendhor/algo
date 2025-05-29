@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
-#include "merge.h"
-#include "printarray.h"
+#include "mergesort_utils/merge.h"
+#include "../printarray.h"
 
 int mergesort(int input[], int inf, int sup) {
     if (inf < sup) {

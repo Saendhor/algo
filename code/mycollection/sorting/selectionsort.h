@@ -1,7 +1,7 @@
 #pragma once
 #include <stdio.h>
 
-#include "swap.h"
+#include "../swap.h"
 
 int selectionsort_i(int input[], int size) {
     int min_index, temp;

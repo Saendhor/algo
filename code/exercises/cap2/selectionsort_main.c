@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #include "../../mycollection/printarray.h"
-#include "../../mycollection/selectionsort.h"
+#include "../../mycollection/sorting/selectionsort.h"
 
 int main(int argc, char* argv[]) {
     int input[] = {4, 9, 10, 21, 2, 64, 5};
