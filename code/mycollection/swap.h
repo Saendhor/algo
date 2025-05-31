@@ -1,5 +1,5 @@
-#pragma once
-#include <stdio.h>
+#ifndef SWAP_H
+#define SWAP_H
 
 int swap_i(int* input, int index, int dest) {
     int temp = input[index];
@@ -8,3 +8,5 @@ int swap_i(int* input, int index, int dest) {
 
     return 0;
 }
+
+#endif

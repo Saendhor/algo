@@ -1,6 +1,7 @@
-#pragma once
-#include <stdlib.h>
+#ifndef CREATEHEAP_H
+#define CREATEHEAP_H
 
+#include <stdlib.h>
 #include "heap_t.h"
 
 heap_t createheap_i(int* input) {
@@ -11,3 +12,5 @@ heap_t createheap_i(int* input) {
 
     return new_heap;
 }
+
+#endif

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SELECTIONSORT_H
+#define SELECTIONSORT_H
+
 #include <stdio.h>
 
 #include "../swap.h"
@@ -18,6 +20,7 @@ int selectionsort_i(int input[], int size) {
     return 0;
 }
 
+#endif
 /* PSEUDOCODE
 
 0    selectionsort(A)

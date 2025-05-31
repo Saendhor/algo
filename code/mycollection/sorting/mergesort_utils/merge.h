@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MERGE_H
+#define MERGE_H
+
 #include <stdio.h>
 
 int merge(int tomerge[], int inf, int pivot, int sup) {
@@ -48,6 +50,7 @@ int merge(int tomerge[], int inf, int pivot, int sup) {
     return 0;
 }
 
+#endif
 /* PSEUDOCODE
 
 00    MERGE(A, p, q, r)

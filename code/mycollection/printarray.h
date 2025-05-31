@@ -1,4 +1,6 @@
-#pragma once
+#ifndef PRINTARRAY_H
+#define PRINTARRAY_H
+
 #include <stdio.h>
 
 void printarray_d(double array[], int size) {
@@ -24,3 +26,5 @@ void printarray_i(int array[], int size) {
     }
     printf("\n");
 }
+
+#endif

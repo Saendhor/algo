@@ -1,4 +1,5 @@
-#pragma once
+#ifndef REVERSE_INSERTIONSORT_H
+#define REVERSE_INSERTIONSORT_H
 
 int reverse_insertionsort(int A[], int size) {
     int key, i;
@@ -13,3 +14,4 @@ int reverse_insertionsort(int A[], int size) {
     }
     return 0;
 }
+#endif

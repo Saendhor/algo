@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MAXHEAP_HEAPIFY_H
+#define MAXHEAP_HEAPIFY_H
+
 #include "heap_t.h"
 
 int maxheap_heapify(heap_t toheapify, int index) {
@@ -21,6 +23,7 @@ int maxheap_heapify(heap_t toheapify, int index) {
     return 0;
 }
 
+#endif
 /* PSEUDOCODE
 
     MAX-HEAPIFY (A, i)

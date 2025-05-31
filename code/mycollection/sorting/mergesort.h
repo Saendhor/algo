@@ -1,4 +1,6 @@
-#pragma once
+#ifndef MERGESORT_H
+#define MERGESORT_H
+
 #include <stdio.h>
 #include "mergesort_utils/merge.h"
 #include "../printarray.h"
@@ -22,6 +24,7 @@ int mergesort(int input[], int inf, int sup) {
     return 0;
 }
 
+#endif
 /* PSEUDOCODE
 
     MERGESORT(A, p, r)

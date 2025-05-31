@@ -1,4 +1,6 @@
-#pragma once
+#ifndef HEAP_T_H
+#define HEAP_T_H
+
 #include "../swap.h"
 
 typedef struct heap {
@@ -19,3 +21,5 @@ int fparent(int index) {
 int fright(int index) {
     return 2 * (index + 1); // (2 * (index + 1) + 1) - 1;
 }
+
+#endif
