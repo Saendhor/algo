@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#include "../../mycollection/mergesort.h"
+#include "../../mycollection/sorting/mergesort.h"
 #include "../../mycollection/printarray.h"
 
 //pag 30 n2.3-1
