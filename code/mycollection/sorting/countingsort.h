@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "../findmax.h"
 
-int* countingsort(int* input) {
+int countingsort(int* input) {
     int size = (int) sizeof(input) / sizeof(int);
     int max = findmax_i(input);
 
@@ -24,13 +24,19 @@ int* countingsort(int* input) {
         num_values[i] = num_values[i] + num_values[i - 1];
     }
 
-    int* ordered_input = (int*) calloc(sizeof(int), size);
+    //creating the array of the ordered input
+    int ordered_input[size];
     for (int j = size; j > 0; j--) {
         ordered_input[num_values[input[j]]] = input[j];
         num_values[input[j]]--;
     }
 
-    return ordered_input;
+    //Copying the ordered values inside the inputed array
+    for (int i = 0; i < size; i++) {
+        input[i] = ordered_input[i];
+    }
+
+    return 0;
 }
 
 #endif
