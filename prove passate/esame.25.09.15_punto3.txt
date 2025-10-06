@@ -1,0 +1,17 @@
+/*
+	Input:	m liste ordinate → to_order array contenente m teste di liste
+	Output:	array con n elementi ordinati dove n = # elem delle m liste
+*/
+LIST-ORDER (to_order, m, n)
+	BUILD-MIN-HEAP(to_order)
+	final ← new array(n)
+	min ← 0
+	for i ← 0 to n // O(n)
+		min ← MIN-INDEX(to_order)
+		final[i] ← to_order[min].value
+		to_order[min] ← NEXT(to_order[min])
+		if to_order[min] = NIL 
+			SWAP(to_order[min], to_order[heapsize[to_order]])
+			heapsize[to_order] ← heapsize[to_order] - 1
+		MIN-HEAPIFY(to_order, min) //O(log(m)) perchè dim(to_order) = m
+	return final
