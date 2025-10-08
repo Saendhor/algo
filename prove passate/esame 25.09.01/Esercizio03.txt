@@ -1,0 +1,9 @@
+Scrivere lo pseudo-codice di una funzione che, preso un insieme P = { (xi,yi) | 0 <= i < n} di n punti,
+un punto A = (a, b) e un parametro k < n, restituisca i k punti di P più vicini al punto A
+NOTA: La soluzione diretta prevede l'ordinamento degli elementi in P rispetto la distanza da A
+e la selezione di primi k elementi. Tale soluzione è O(n log(n) + k).
+La procedura fornita deve avere una complessità O(n log(k) )
+
+
+Point* NEAREST_ITEM (Point* P, Point A, int k)
+
