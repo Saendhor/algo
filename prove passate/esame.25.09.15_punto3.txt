@@ -5,13 +5,11 @@
 LIST-ORDER (to_order, m, n)
 	BUILD-MIN-HEAP(to_order)
 	final ← new array(n)
-	min ← 0
-	for i ← 0 to n // O(n)
-		min ← MIN-INDEX(to_order)
-		final[i] ← to_order[min].value
-		to_order[min] ← NEXT(to_order[min])
-		if to_order[min] = NIL 
-			SWAP(to_order[min], to_order[heapsize[to_order]])
+	for i ← 1 to n // O(n)
+		final[i] ← to_order[1].value //min è sempre in testa essendo un min-heap
+		to_order[1] ← NEXT(to_order[1])
+		if to_order[1] = NIL 
+			SWAP(to_order[1], to_order[heapsize[to_order]])
 			heapsize[to_order] ← heapsize[to_order] - 1
-		MIN-HEAPIFY(to_order, min) //O(log(m)) perchè dim(to_order) = m
+		MIN-HEAPIFY(to_order, 1) //O(log(m)) perchè dim(to_order) = m
 	return final
