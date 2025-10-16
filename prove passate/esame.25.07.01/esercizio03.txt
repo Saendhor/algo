@@ -3,3 +3,12 @@ dato un nodo radice x di un RBT e un intero S,
 verifichi se esiste almeno un cammino dalla radice x a una foglia tale che la somma delle chiavi dei nodi lungo il cammino sia esattamente S
 
 VERIFICA(x, S)
+	delta = S - x.value
+	//check if is leaf
+	if x->left == NULL AND x->right == NULL
+		return delta == 0 //TRUE or FALSE
+	//check left subtree
+	if x->left != NULL
+		VERIFICA(x->left, delta)
+	//check right subtree
+		VERIFICA(x->right, delta)
