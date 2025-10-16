@@ -1,0 +1,10 @@
+Si consideri un flusso di numeri interi che arrivano uno alla volta.
+Si desidera mantenere in ogni momento l'informazione sul k-esimo elemento più piccolo fra quelli finora ricevuti.
+Progettare e implementare una struttura dati che supporti le operazioni
+	- add(x)	inserisce un nuovo elemento intero x nel flusso;
+	- get()		restituisce il k-esimo elemento più piccolo fra quelli inseriti.
+			se sono stati inseriti meno di k elementi, restituisce non disponibile
+
+Suggerimento: si utilizzi una coda con priorità
+
+

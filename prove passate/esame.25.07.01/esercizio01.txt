@@ -1,0 +1,1 @@
+Scrivere lo pseudocodice di una procedura ricorsiva che, dato un nodo x, restituisca la sua altezza nera.

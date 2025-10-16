@@ -5,5 +5,15 @@ e la selezione di primi k elementi. Tale soluzione è O(n log(n) + k).
 La procedura fornita deve avere una complessità O(n log(k) )
 
 
-Point* NEAREST_ITEM (Point* P, Point A, int k)
+NEAREST (P, A, k)	//SBAGLIATO: LASCIO PER SPUNTO
+	n ← size(P)
+	if k >= n ERROR
+	B ← new array (n)
+	for i ← 0 to n //O(n)
+		B[i].value = P[i].x + P[i].y
+		B[i].name = P[i].name
+	C ← new array (k)
+	for i ← 0 to k //O(k)
+		C[i] ← HEAP-EXTRACT-MIN(B) //O(log(k))
+	return C
 

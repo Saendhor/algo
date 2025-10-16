@@ -1,0 +1,15 @@
+Si fornisca una funzione ricorsiva IsHeap(A, i) che preso in input un Max-Heap A (array)
+e un indice i > 0 verifica se il sottoalbero radicato in quel nodo i di A sia effettivamente un heap, ovvero rispetti la proprietà dell'ordinamento parziale.
+Restituisce TRUE o FALSE
+
+ISHEAP(A, i)
+	if i <= 0 ERROR
+	l ← TRUE
+	r ← TRUE
+	if LEFT(i) < heapsize(A)
+		l ← ISHEAP(A, LEFT(i))
+	if RIGHT(i) < heapsize(A)
+		r ← ISHEAP(A, RIGHT(i))
+	if A[LEFT(i)] < A[RIGHT(i)] AND r == l
+		return TRUE
+	return r == l
