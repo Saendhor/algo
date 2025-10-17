@@ -3,7 +3,11 @@ un punto A = (a, b) e un parametro k < n, restituisca i k punti di P più vicini
 NOTA: La soluzione diretta prevede l'ordinamento degli elementi in P rispetto la distanza da A
 e la selezione di primi k elementi. Tale soluzione è O(n log(n) + k).
 La procedura fornita deve avere una complessità O(n log(k) )
-
+Suggerimento: calcolare la distanza come sqrt(x² + y²), costruire un MAX-HEAP M di k elementi aventi k elementi casualmente scelti in P
+dopo di che confrontare sempre con il max, effettuare un'estrazione su M del max e un inserimento.
+L'importante in questo step è che venga richiamato MAX-HEAPIFY che ha complessità di O(log(k)) che viene ripetuto O(n) volte
+in quanto confronto tutti gli elementi di P
+(che ha cardinalità n)
 
 NEAREST (P, A, k)	//SBAGLIATO: LASCIO PER SPUNTO
 	n ← size(P)

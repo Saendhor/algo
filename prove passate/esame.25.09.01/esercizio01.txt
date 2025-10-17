@@ -1,12 +1,7 @@
 Scrivere lo pseudocodice di una procedura ricorsiva bhVerify(x) che,
 fornita in input la radice x di un RBT verifichi se tale proprietà è rispettata.
 Ritorna TRUE se rispettata, FALSE altrimenti.
+Suggerimento: serve tornare sia se TRUE o FALSE sia un valore intero rappresentante l'altezza nera che raggiunge il sottoalbero selezionato
 
-BH-VERIFY(x)
-	if x->LEFT != NIL
-		l ← BH-VERIFY(x->LEFT)
-	if x->RIGHT != NIL
-		r ← BH-VERIFY(x->RIGHT)
-	if (l AND r) OR x.c == BLACK
-		return TRUE
-	return FALSE
+BH-VERIFY(x, h)
+	
