@@ -4,4 +4,14 @@ Ritorna TRUE se rispettata, FALSE altrimenti.
 Suggerimento: serve tornare sia se TRUE o FALSE sia un valore intero rappresentante l'altezza nera che raggiunge il sottoalbero selezionato
 
 BH-VERIFY(x, h)
-	
+	//Black height + 1
+	if x.c == BLACK
+		h ← h + 1
+	if x->LEFT != NIL
+		l ← BH-VERIFY(x->LEFT, h)
+	if x->RIGHT != NIL
+		r ← BH-VERIFY(x->RIGHT, h)
+	if l.h == r.h AND l.b == r.b
+		return (TRUE, h)
+	else
+		return (FALSE, h)

@@ -6,8 +6,13 @@ Suggerimento: bisogna necessariamente controllare x > y e x < z all'inizio della
 ISHEAP(A, i)
 	if i <= 0 ERROR
 	if LEFT(i) < heapsize(A) //confronto in radice
-	l ← TRUE
+		if A[LEFT(i)] > A[i]
+			return FALSE
+		if RIGHT(i) < heapsize(A)
+			if A[RIGHT(i)] > A[i]
+				return FALSE
 	r ← TRUE
+	l ← TRUE
 	if LEFT(i) < heapsize(A)
 		l ← ISHEAP(A, LEFT(i))
 	if RIGHT(i) < heapsize(A)

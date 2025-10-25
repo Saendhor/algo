@@ -1,0 +1,10 @@
+Fornire lo pseudocodice di una procedura ricorsiva che preso in input il nodo radice di un RBT
+sia in grado di stampare le chiavi di tutti i nodi dell'albero in ordine crescente indicandone anche il colore
+NOTA: per ogni nodo dovrà essere stampata una coppia (k, c) valore-colore
+
+INORDER(x)
+	if x->LEFT != NIL
+		INORDER(x->LEFT)
+	DISPLAY(x.k, x.c)
+	if x->RIGHT != NIL
+		INORDER(x->RIGHT)

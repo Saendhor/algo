@@ -1,0 +1,11 @@
+Si fornisca una funzione ricorsiva HeapInsert(A, k) che preso in input un Max-Heap A (array)
+e un valore k, inserisca k all'interno del Max-Heap mantenendo la proprietà di ordinamento parziale.
+La procedura deve avere una complessità logaritmica
+
+HEAP_INSERT(A, k)
+	heapsize ← heapsize + 1
+	A[heapsize] ← k
+	i = heapsize
+	while i > 1 AND A[PARENT(i)] < A[i]
+		SWAP(A[PARENT(i)], A[i])
+		i ← PARENT(i)

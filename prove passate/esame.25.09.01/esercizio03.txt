@@ -3,21 +3,29 @@ un punto A = (a, b) e un parametro k < n, restituisca i k punti di P più vicini
 NOTA: La soluzione diretta prevede l'ordinamento degli elementi in P rispetto la distanza da A
 e la selezione di primi k elementi. Tale soluzione è O(n log(n) + k).
 La procedura fornita deve avere una complessità O(n log(k) )
-Suggerimento: calcolare la distanza come sqrt(x² + y²), costruire un MAX-HEAP M di k elementi aventi k elementi casualmente scelti in P
+Suggerimento: calcolare la distanza come sqrt( (x - a)² + (y - b)² ), costruire un MAX-HEAP M di k elementi aventi k elementi casualmente scelti in P
 dopo di che confrontare sempre con il max, effettuare un'estrazione su M del max e un inserimento.
 L'importante in questo step è che venga richiamato MAX-HEAPIFY che ha complessità di O(log(k)) che viene ripetuto O(n) volte
 in quanto confronto tutti gli elementi di P
 (che ha cardinalità n)
 
-NEAREST (P, A, k)	//SBAGLIATO: LASCIO PER SPUNTO
+NEAREST (P, A, k)
 	n ← size(P)
-	if k >= n ERROR
-	B ← new array (n)
-	for i ← 0 to n //O(n)
-		B[i].value = P[i].x + P[i].y
-		B[i].name = P[i].name
-	C ← new array (k)
-	for i ← 0 to k //O(k)
-		C[i] ← HEAP-EXTRACT-MIN(B) //O(log(k))
-	return C
+	if k >= n
+		return ERROR
+	//Initialize the distance array
+	distance ← new array(n)
+	for i ← 0 to n - 1 // O(n)
+		distance[i] ← sqrt( (P[i].x - A.x)² + (P[i].y - A.y)² )
+	//Initialize the buffer to return
+	buffer ← new array(k)
+	for i ← 0 to k - 1 //O(k)
+		buffer[i] ← distance[i]
+	BUILD-MAX-HEAP(buffer) // O(n)
+	for i ← k to n - k - 1 //insieme al for di sopra è O(n - k)
+		if distance[i] > buffer[0]
+			buffer[0] ← distance[i]
+			MAX-HEAPIFY(buffer, 0) //log(k)
+	return buffer
 
+	T(n) = O(n) + O(k) + O(n) + O( (n - k) * log(k) )
